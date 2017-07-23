@@ -1,0 +1,57 @@
+---
+
+version: '3'
+
+services:
+  app:
+    build: .
+    command: bundle exec puma -C config/puma.rb
+    volumes:
+      - .:/app
+      - ./public:/app/public
+    expose:
+      - 3000
+    depends_on:
+      - postgres
+      - redis
+    env_file:
+      - .env
+    environment:
+      - VIRTUAL_HOST=localhost
+
+  postgres:
+    image: postgres:9.6-alpine
+    ports:
+      - 5432:5432
+    volumes:
+      - ./tmp/data/postgres:/var/lib/postgresql/data
+
+  proxy:
+    image: jwilder/nginx-proxy:latest
+    ports:
+      - 80:80
+    volumes:
+      - /var/run/docker.sock:/tmp/docker.sock:ro
+
+  redis:
+    image: redis:3.2-alpine
+    command: redis-server --requirepass yourpassword
+    ports:
+      - 6379:6379
+    volumes:
+      - ./tmp/data/redis:/var/lib/redis/data
+
+  sidekiq:
+    depends_on:
+      - postgres
+      - redis
+    build: .
+    command: sidekiq -C config/sidekiq.yml
+    volumes:
+      - .:/app
+    env_file:
+      - .env
+
+volumes:
+  postgres:
+  redis:

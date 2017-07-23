@@ -1,0 +1,6 @@
+.DS_Store
+.git
+.dockerignore
+.byebug_history
+log/*
+tmp/*
