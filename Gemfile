@@ -7,7 +7,7 @@ end
 
 gem 'rails', '~> 5.1.2'
 
-# gem 'bcrypt', '~> 3.1.7'
+gem 'bcrypt', '~> 3.1.7'
 gem 'jbuilder', '~> 2.5'
 gem 'pg', '~> 0.18'
 gem 'puma', '~> 3.7'
@@ -18,6 +18,16 @@ gem 'uglifier', '>= 1.3.0'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+##
+# Authentication & authorization
+gem 'omniauth-discord'
+gem 'omniauth-facebook'
+gem 'omniauth-google-oauth2'
+gem 'pundit'
+gem 'rolify'
+
+##
+# Background jobs
 gem 'redis-rails'
 gem 'sidekiq'
 
