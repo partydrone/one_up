@@ -1,7 +1,7 @@
 require 'test_helper'
 
 describe User::Authentication do
-  let(:user) { User.new(provider: 'identity', uid: '1234567890', first_name: 'Bilbo', last_name: 'Baggins', email: 'bilbo.baggins@bagend.com') }
+  let(:user) { User.new(first_name: 'Bilbo', last_name: 'Baggins', email: 'bilbo.baggins@bagend.com') }
 
   it "has an auth token" do
     user.must_respond_to :auth_token
