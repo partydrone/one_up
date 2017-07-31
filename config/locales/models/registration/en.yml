@@ -1,0 +1,10 @@
+---
+
+en:
+  activerecord:
+    models:
+      registration: Registration
+    attributes:
+      registration:
+        extra_life_participant_id: Extra-Life participant ID
+        systems: Systems

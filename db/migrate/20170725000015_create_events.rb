@@ -5,7 +5,7 @@ class CreateEvents < ActiveRecord::Migration[5.1]
       t.datetime :started_at
       t.datetime :ended_at
       t.integer :extra_life_team_id
-      t.string :twitch_feed_url
+      t.string :twitch_stream_url
 
       t.timestamps
     end

@@ -5,11 +5,11 @@ one:
   started_at: 2017-07-25 00:00:16
   ended_at: 2017-07-25 00:00:16
   extra_life_team_id: 1
-  twitch_feed_url: MyString
+  twitch_stream_url: MyString
 
 two:
   title: MyString
   started_at: 2017-07-25 00:00:16
   ended_at: 2017-07-25 00:00:16
   extra_life_team_id: 1
-  twitch_feed_url: MyString
+  twitch_stream_url: MyString

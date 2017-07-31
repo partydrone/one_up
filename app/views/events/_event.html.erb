@@ -1,0 +1,6 @@
+<div>
+  <%= content_tag :div do %>
+    <%= link_to event.title, event %>
+  <% end %>
+  <%= content_tag :div, event.started_at.to_s(:short) %>
+</div>

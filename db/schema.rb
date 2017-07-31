@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170725000943) do
+ActiveRecord::Schema.define(version: 20170730023026) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,18 +20,29 @@ ActiveRecord::Schema.define(version: 20170725000943) do
     t.datetime "started_at"
     t.datetime "ended_at"
     t.integer "extra_life_team_id"
-    t.string "twitch_feed_url"
+    t.string "twitch_stream_url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "identities", force: :cascade do |t|
+  create_table "identity_services", force: :cascade do |t|
     t.string "provider"
     t.string "uid"
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_identities_on_user_id"
+    t.index ["user_id"], name: "index_identity_services_on_user_id"
+  end
+
+  create_table "registrations", force: :cascade do |t|
+    t.integer "extra_life_participant_id"
+    t.bigint "event_id"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.json "systems"
+    t.index ["event_id"], name: "index_registrations_on_event_id"
+    t.index ["user_id"], name: "index_registrations_on_user_id"
   end
 
   create_table "roles", force: :cascade do |t|
@@ -63,5 +74,7 @@ ActiveRecord::Schema.define(version: 20170725000943) do
     t.index ["user_id"], name: "index_users_roles_on_user_id"
   end
 
-  add_foreign_key "identities", "users"
+  add_foreign_key "identity_services", "users"
+  add_foreign_key "registrations", "events"
+  add_foreign_key "registrations", "users"
 end

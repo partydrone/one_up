@@ -3,17 +3,17 @@ class User < ApplicationRecord
     extend ActiveSupport::Concern
 
     included do
-      has_many :identities
+      has_many :identity_services
       has_secure_token :auth_token
     end
 
     module ClassMethods
       def create_with_omniauth(info)
-        create(
-          first_name: info['first_name'],
-          last_name:  info['last_name'],
-          email:      info['email']
-        )
+        create! do |user|
+          user.first_name = info['first_name']
+          user.last_name  = info['last_name']
+          user.email      = info['email']
+        end
       end
     end
   end

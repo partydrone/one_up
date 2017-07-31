@@ -11,10 +11,7 @@
 // about supported directives.
 //
 //= require rails-ujs
-//= require turbolinks
 //= require fontawesome/packs/brands
-//= require fontawesome/packs/light
 //= require fontawesome/packs/regular
-//= require fontawesome/packs/solid
 //= require fontawesome/fontawesome
 //= require_tree .

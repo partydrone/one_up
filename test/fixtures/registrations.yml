@@ -1,0 +1,7 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  extra_life_participant_id: 1
+
+two:
+  extra_life_participant_id: 1

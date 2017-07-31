@@ -1,0 +1,13 @@
+<% content_for :title, 'Edit My Registration' %>
+<h1><%= link_to @registration.event.title, @registration.event %></h1>
+<h2><%= yield :title %></h2>
+<%= form_for @registration do |form| %>
+  <%= form.label :extra_life_participant_id %>
+  <%= form.text_field :extra_life_participant_id %>
+  <%= form.label :systems %>
+  <% SYSTEMS.keys.each do |system| %>
+    <%= form.label system, SYSTEMS[system][:name] %>
+    <%= form.number_field system, min: 0 %>
+  <% end %>
+  <%= form.submit %>
+<% end %>

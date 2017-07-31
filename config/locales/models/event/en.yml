@@ -1,0 +1,13 @@
+---
+
+en:
+  activerecord:
+    models:
+      event: Event
+    attributes:
+      event:
+        title: Title
+        started_at: Starts
+        ended_at: Ends
+        extra_life_team_id: Extra-Life team ID
+        twitch_stream_url: Twitch stream URL
