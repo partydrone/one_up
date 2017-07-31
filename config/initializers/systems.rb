@@ -14,7 +14,7 @@ SYSTEMS = {
     network: false,
     display: false
   },
-  ps1: {
+  ps: {
     name:    'Playstation',
     network: false,
     display: false
