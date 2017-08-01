@@ -8,7 +8,7 @@ class EventPolicy < ApplicationPolicy
   end
 
   def update?
-    user.has_role? :admin, record
+    user.has_role? :owner, record
   end
 
   class Scope < Scope

@@ -23,7 +23,7 @@ class EventsController < ApplicationController
     authorize @event
 
     if @event.save
-      current_user.add_role :admin, @event
+      current_user.add_role :owner, @event
       redirect_to @event, notice: %(Event created successfully!)
     else
       render :new
