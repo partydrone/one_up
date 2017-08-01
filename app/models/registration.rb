@@ -5,12 +5,12 @@ class Registration < ApplicationRecord
   store_accessor :systems, SYSTEMS.keys
 
   SYSTEMS.keys.each do |key|
-    define_method "#{key}=".to_s do |value|
-      if value == ''
-        value = '0'
-      end
-      
-      super value
+    define_method key do
+      super().to_i
+    end
+
+    define_method "#{key}=" do |value|
+      super value.to_i
     end
   end
 end

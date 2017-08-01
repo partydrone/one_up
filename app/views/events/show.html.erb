@@ -24,8 +24,8 @@
 </ul>
 
 <div>
-  <% SYSTEMS.keys.each do |system| %>
-    <%= system %>:
-    <%= @event.registrations.sum "CAST (systems ->> '#{system}' AS INTEGER)" %>
+  <% SYSTEMS.keys.each do |key| %>
+    <%= key %>:
+    <%= @event.registrations.sum "CAST (systems ->> '#{key}' AS INTEGER)" %>
   <% end %>
 </div>
