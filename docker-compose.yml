@@ -17,7 +17,7 @@ services:
     env_file:
       - .env
     environment:
-      - VIRTUAL_HOST=localhost,10.1.65.208.xip.io
+      - VIRTUAL_HOST=localhost,oneup.10.1.65.208.xip.io
 
   postgres:
     image: postgres:9.6-alpine
