@@ -4,6 +4,7 @@ class SessionsController < ApplicationController
 
   def create
     auth = request.env['omniauth.auth']
+    p auth
     @identity_service = IdentityService.find_with_omniauth(auth)
 
     if @identity_service.nil?

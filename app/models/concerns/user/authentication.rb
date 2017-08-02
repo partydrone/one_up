@@ -10,9 +10,11 @@ class User < ApplicationRecord
     module ClassMethods
       def create_with_omniauth(info)
         create! do |user|
+          user.name       = info['name']
+          user.email      = info['email']
           user.first_name = info['first_name']
           user.last_name  = info['last_name']
-          user.email      = info['email']
+          user.image      = info['image']
         end
       end
     end

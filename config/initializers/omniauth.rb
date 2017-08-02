@@ -3,7 +3,8 @@ Rails.application.config.middleware.use OmniAuth::Builder do
   # Discord
   provider :discord,
     Rails.application.secrets.discord_client_id,
-    Rails.application.secrets.discord_client_secret
+    Rails.application.secrets.discord_client_secret,
+    scope: 'email'
 
   ##
   # Facebook

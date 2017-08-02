@@ -5,9 +5,5 @@ class User < ApplicationRecord
   has_many :registrations
   has_many :events, through: :registrations
 
-  validates :first_name, :last_name, :email, presence: true
-
-  def name
-    [first_name, last_name].join(' ')
-  end
+  validates :name, presence: true
 end

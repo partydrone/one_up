@@ -20,7 +20,7 @@ gem 'uglifier', '>= 1.3.0'
 
 ##
 # Authentication & authorization
-gem 'omniauth-discord'
+gem 'omniauth-discord', github: 'partydrone/omniauth-discord'
 gem 'omniauth-facebook'
 gem 'omniauth-google-oauth2', '0.5.0'
 gem 'pundit'
