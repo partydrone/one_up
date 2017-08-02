@@ -19,7 +19,7 @@ class IdentityService < ApplicationRecord
           identity_service.token         = credentials['token']
           identity_service.secret        = credentials['secret']
           identity_service.expires       = credentials['expires']
-          identity_service.expires_at    = credentials['expires_at']
+          identity_service.expires_at    = credentials['expires_at'].seconds.from_now
           identity_service.refresh_token = credentials['refresh_token']
 
           identity_service.auth          = auth.to_json
