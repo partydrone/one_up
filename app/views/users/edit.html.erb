@@ -1,3 +1,19 @@
 <% content_for :title, 'Edit User' %>
 <h1><%= yield :title %></h1>
 <%= render 'form' %>
+<hr>
+<h2>Accounts:</h2>
+<%= render @user.identity_services %>
+<p>
+  <%= link_to sign_in_path do %>
+  <i class="far add-square"></i>
+  Add another identity service
+  <% end %>
+</p>
+<hr>
+<p>
+  <%= link_to @user, method: :delete, class: 'button' do %>
+  <i class="far fa-trash"></i>
+  Delete my account
+  <% end %>
+</p>

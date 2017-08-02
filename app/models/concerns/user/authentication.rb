@@ -3,7 +3,7 @@ class User < ApplicationRecord
     extend ActiveSupport::Concern
 
     included do
-      has_many :identity_services
+      has_many :identity_services, dependent: :destroy
       has_secure_token :auth_token
     end
 
