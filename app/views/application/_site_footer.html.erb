@@ -1,0 +1,3 @@
+<footer class="site-footer">
+  <%= content_tag :p, "Container: #{Socket.gethostname}" if Rails.env.development? %>
+</footer>

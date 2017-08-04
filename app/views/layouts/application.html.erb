@@ -1,6 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <title><%= full_title yield(:title) %></title>
     <%= csrf_meta_tags %>
 
@@ -9,9 +12,8 @@
   </head>
 
   <body>
-    <%= render 'site_navigation' %>
-    <%= render 'flash' %>
+    <%= render 'site_header' %>
     <%= yield %>
-    <%= content_tag :p, "Container: #{Socket.gethostname}" if Rails.env.development? %>
+    <%= render 'site_footer' %>
   </body>
 </html>

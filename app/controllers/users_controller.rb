@@ -1,29 +1,30 @@
 class UsersController < ApplicationController
-  skip_before_action :authenticate!, only: [:new]
-  before_action :set_user, only: [:edit, :update]
-
-  def new
-    @user = User.new
-  end
+  before_action :set_user
 
   def edit
   end
 
-  def create
-
+  def update
+    if @user.update(user_params)
+      redirect_to edit_user_path(@user), notice: %(Updated user successfully!)
+    else
+      render :edit
+    end
   end
 
-  def update
-
+  def destroy
+    @user.destroy
+    redirect_to root_path, notice: %(User deleted successfully!)
   end
 
   private
 
   def set_user
     @user = User.find(params[:id])
+    authorize @user
   end
 
   def user_params
-    params.require(:user).permit(:first_name, :last_name, :email)
+    params.require(:user).permit(:name, :first_name, :last_name, :email)
   end
 end

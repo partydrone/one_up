@@ -18,7 +18,7 @@ module ApplicationHelper
     output = [
       from_date.strftime(from_date_template.join(' ')),
       to_date.strftime(to_date_template.join(' '))
-    ].join(' – ')
+    ].join('–')
 
     return output
   end
@@ -38,7 +38,7 @@ module ApplicationHelper
     output = [
       from_date.strftime(from_time_template),
       to_date.strftime(to_time_template)
-    ].join(' – ')
+    ].join('–')
 
     return output
   end
