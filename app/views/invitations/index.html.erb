@@ -1,0 +1,10 @@
+<% content_for :title, 'Invitations' %>
+<h1><%= link_to @event.title, @event %></h1>
+<h2><%= yield :title %></h2>
+<p>
+  <%= link_to new_event_invitation_path(@event) do %>
+  <i class="far fa-plus-square"></i>
+  Add a new invitation
+  <% end %>
+</p>
+<%= render @invitations %>

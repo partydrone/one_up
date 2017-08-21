@@ -1,0 +1,18 @@
+<% if @invitation.errors.any? %>
+  <div>
+    <h2>
+      <%= pluralize @invitation.errors.count, 'error' %>
+      prohibited this invitation from being sent:
+    </h2>
+    <ul>
+      <% @invitation.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+<%= form_for [@event, @invitation] do |form| %>
+  <%= form.label :email %>
+  <%= form.email_field :email %>
+  <%= form.submit %>
+<% end %>

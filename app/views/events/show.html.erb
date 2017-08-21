@@ -1,27 +1,50 @@
 <% content_for :title, @event.title %>
 <h1><%= yield :title %></h1>
-<ul>
+<ul class="fa-ul">
   <li>
-    <i class="far fa-calendar"></i>
+    <i class="far fa-calendar fa-li"></i>
     <%= format_date_range @event.started_at, @event.ended_at %>
   </li>
   <li>
-    <i class="far fa-clock"></i>
+    <i class="far fa-clock fa-li"></i>
     <%= format_time_range @event.started_at, @event.ended_at %>
   </li>
-  <%= content_tag :li do %>
-    <%= link_to edit_event_path(@event) do %>
-    <i class="far fa-edit"></i>
-    Edit
-    <% end %>
-  <% end if policy(@event).edit? %>
-  <li>
-    <%= link_to edit_registration_path(@event.registrations.find_by(user: current_user)) do %>
-    <i class="far fa-info-circle"></i>
-    My registration
-    <% end %>
-  </li>
 </ul>
+
+<nav>
+  <ul>
+    <li>
+      <%= link_to @event do %>
+      <i class="far fa-home fa-fw"></i>
+      Dashboard
+      <% end %>
+    </li>
+    <li>
+      <%= link_to event_registrations_path(@event) do %>
+      <i class="far fa-users fa-fw"></i>
+      Members
+      <% end %>
+    </li>
+    <li>
+      <%= link_to edit_registration_path(@event.registrations.find_by(user: current_user)) do %>
+      <i class="far fa-list-alt fa-fw"></i>
+      My registration
+      <% end %>
+    </li>
+    <li>
+      <%= link_to event_invitations_path(@event) do %>
+      <i class="far fa-user-plus fa-fw"></i>
+      Invitations
+      <% end %>
+    </li>
+    <%= content_tag :li do %>
+      <%= link_to edit_event_path(@event) do %>
+      <i class="far fa-edit fa-fw"></i>
+      Edit
+      <% end %>
+    <% end if policy(@event).edit? %>
+  </ul>
+</nav>
 
 <div>
   <% SYSTEMS.keys.each do |key| %>

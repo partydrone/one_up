@@ -2,27 +2,27 @@
   <ul>
     <li>
       <%= link_to root_path do %>
-      <i class="far fa-home"></i>
+      <i class="far fa-home fa-fw"></i>
       Home
       <% end %>
     </li>
     <li>
       <%= link_to events_path do %>
-      <i class="far fa-calendar"></i>
+      <i class="far fa-calendar fa-fw"></i>
       Events
       <% end %>
     </li>
     <% if signed_in? %>
     <li>
       <%= link_to edit_user_path(current_user) do %>
-      <i class="far fa-id-badge"></i>
+      <i class="far fa-user-circle fa-fw"></i>
       <%= current_user.name %>
       <% end %>
     </li>
     <% else %>
     <li>
       <%= link_to sign_in_path do %>
-      <i class="far fa-sign-in"></i>
+      <i class="far fa-sign-in fa-fw"></i>
       Sign in
       <% end %>
     </li>

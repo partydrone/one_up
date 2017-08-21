@@ -2,11 +2,11 @@
 <h1><%= yield :title %></h1>
 <%= render 'form' %>
 <hr>
-<h2>Accounts:</h2>
+<h2>Single sign-on:</h2>
 <%= render @user.identity_services %>
 <p>
   <%= link_to sign_in_path do %>
-  <i class="far add-square"></i>
+  <i class="far fa-plus-square"></i>
   Add another identity service
   <% end %>
 </p>

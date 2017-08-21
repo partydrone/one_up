@@ -1,0 +1,2 @@
+<p><%= @invitation.sender.name %> invites you to join <%= @invitation.event.title %>.</p>
+<p><%= link_to 'Click here', sign_in_url(invite_token: @invitation.token) %> to join.</p>

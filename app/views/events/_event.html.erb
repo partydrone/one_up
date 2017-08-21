@@ -2,5 +2,5 @@
   <%= content_tag :div do %>
     <%= link_to event.title, event %>
   <% end %>
-  <%= content_tag :div, event.started_at.to_s(:short) %>
+  <%= content_tag :div, event.started_at.strftime('%e-%b-%Y, %l:%M %p') %>
 </div>

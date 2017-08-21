@@ -1,0 +1,10 @@
+<li>
+  <%= registration.user.name %>
+  (<%= registration.user.email %>)
+  <% if policy(registration).destroy? %>
+  <%= link_to registration, method: :delete, data: { confirm: %(Leaving this event will destroy all associated data and cannot be recovered. Are you sure?) } do %>
+    <i class="far fa-times"></i>
+    Leave event
+  <% end %>
+  <% end %>
+</li>
