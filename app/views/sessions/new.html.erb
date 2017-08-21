@@ -3,19 +3,19 @@
 <p>Sign in using one of the following identity services:</p>
 <ul>
   <li>
-    <%= link_to '/auth/discord', class: 'button discord' do %>
+    <%= link_to "/auth/discord#{ '?invite_token=' + @token if @token }", class: 'button discord' do %>
     <i class="fab fa-discord"></i>
     Discord
     <% end %>
   </li>
   <li>
-    <%= link_to '/auth/facebook', class: 'button facebook' do %>
+    <%= link_to "/auth/facebook#{ '?invite_token=' + @token if @token }", class: 'button facebook' do %>
     <i class="fab fa-facebook"></i>
     Facebook
     <% end %>
   </li>
   <li>
-    <%= link_to '/auth/google', class: 'button google' do %>
+    <%= link_to "/auth/google#{ '?invite_token=' + @token if @token }", class: 'button google' do %>
     <i class="fab fa-google"></i>
     Google
     <% end %>

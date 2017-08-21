@@ -1,0 +1,3 @@
+<%= @invitation.sender.name %> invites you to join <%= @invitation.event.title %>.
+
+<%= sign_in_url(invite_token: @invitation.token) %>

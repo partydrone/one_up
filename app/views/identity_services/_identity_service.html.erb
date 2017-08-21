@@ -1,4 +1,7 @@
 <div>
   <i class="fab fa-<%= identity_service.provider %>"></i>
   <%= identity_service.provider.titlecase %>
+  <%= link_to identity_service_path(identity_service), method: :delete, data: {confirm: %(Are you sure you want to remove this identity service? If this is the last remaining service, it will also delete your user account and you will loose all your data.)} do %>
+  <i class="far fa-times"></i>
+  <% end %>
 </div>

@@ -4,6 +4,7 @@ class IdentityService < ApplicationRecord
 
     included do
       belongs_to :user
+      around_destroy :destroy_orphaned_user
     end
 
     module ClassMethods
@@ -28,6 +29,16 @@ class IdentityService < ApplicationRecord
 
       def find_with_omniauth(auth)
         find_by(provider: auth['provider'], uid: auth['uid'])
+      end
+    end
+
+    private
+
+    def destroy_orphaned_user
+      user = self.user
+      yield
+      if user.identity_services.length == 0
+        user.destroy
       end
     end
   end

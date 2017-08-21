@@ -60,6 +60,7 @@ group :development do
   gem 'minitest-rails', '~> 3.0.0'
   gem 'minitest-rails-capybara', '~> 3.0.0'
   gem 'minitest-reporters'
+  gem 'yard'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

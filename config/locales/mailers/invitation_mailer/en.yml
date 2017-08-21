@@ -1,0 +1,6 @@
+---
+
+en:
+  invitation_mailer:
+    user_invitation:
+      subject: "You are invited to join a One Up event"

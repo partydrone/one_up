@@ -11,7 +11,7 @@
 // about supported directives.
 //
 //= require rails-ujs
-//= require fontawesome/packs/brands
-//= require fontawesome/packs/regular
-//= require fontawesome/fontawesome
+//= require fontawesome/packs/brands.min
+//= require fontawesome/packs/regular.min
+//= require fontawesome/fontawesome.min
 //= require_tree .

@@ -1,0 +1,8 @@
+<p>
+  <%= invitation.email %>
+  <%= invitation.sender.name %>
+  <%= link_to invitation, method: :delete, data: {confirm: %(Are you sure you want to revoke this invitation for #{invitation.email}?)} do %>
+  <i class="far fa-times"></i>
+  revoke
+  <% end if policy(invitation).destroy? %>
+</p>
