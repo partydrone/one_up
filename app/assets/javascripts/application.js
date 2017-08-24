@@ -11,7 +11,12 @@
 // about supported directives.
 //
 //= require rails-ujs
+//= require foundation
 //= require fontawesome/packs/brands.min
 //= require fontawesome/packs/regular.min
 //= require fontawesome/fontawesome.min
 //= require_tree .
+
+$(function() {
+  $(document).foundation();
+});
