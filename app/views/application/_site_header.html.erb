@@ -1,4 +1,14 @@
-<header class="site-header">
-  <%= render 'site_navigation' %>
-  <%= render 'flash' %>
+<header class="site-header top-bar">
+  <div class="top-bar-left">
+    <ul class="menu">
+      <li class="menu-text">
+        One Up
+      </li>
+    </ul>
+  </div>
+  <div class="top-bar-right">
+    <%= render 'site_navigation' %>
+  </div>
 </header>
+
+<%= render 'flash' %>
