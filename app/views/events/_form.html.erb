@@ -5,6 +5,10 @@
   <%= form.datetime_field :started_at, pattern: '[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}', placeholder: 'yyyy-mm-ddThh:mm' %>
   <%= form.label :ended_at %>
   <%= form.datetime_field :ended_at, pattern: '[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}', placeholder: 'yyyy-mm-ddThh:mm' %>
+  <%= form.label :location %>
+  <%= form.text_field :location %>
+  <%= form.label :description %>
+  <%= form.text_field :description %>
   <%= form.label :extra_life_team_id %>
   <%= form.text_field :extra_life_team_id %>
   <%= form.label :twitch_stream_url %>

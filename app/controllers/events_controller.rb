@@ -51,6 +51,6 @@ class EventsController < ApplicationController
   end
 
   def event_params
-    params.require(:event).permit(:title, :started_at, :ended_at, :extra_life_team_id, :twitch_stream_url)
+    params.require(:event).permit(:title, :started_at, :ended_at, :location, :description, :extra_life_team_id, :twitch_stream_url)
   end
 end

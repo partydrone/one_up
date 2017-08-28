@@ -19,6 +19,8 @@ ActiveRecord::Schema.define(version: 20170805023153) do
     t.string "title"
     t.datetime "started_at"
     t.datetime "ended_at"
+    t.string "location"
+    t.string "description"
     t.integer "extra_life_team_id"
     t.string "twitch_stream_url"
     t.datetime "created_at", null: false
