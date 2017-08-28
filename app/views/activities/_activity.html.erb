@@ -1,0 +1,10 @@
+<div>
+  <h4><%= activity.title %></h4>
+  <p><%= format_time_range activity.started_at, activity.ended_at %></p>
+  <p>
+    <%= link_to activity, class: 'button radius' do %>
+    More info
+    <i class="far fa-angle-right fa-fw"></i>
+    <% end %>
+  </p>
+</div>

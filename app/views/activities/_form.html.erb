@@ -1,0 +1,9 @@
+<%= form_for [@event, @activity] do |form| %>
+  <%= form.label :title %>
+  <%= form.text_field :title %>
+  <%= form.label :started_at, 'Starts at' %>
+  <%= form.time_field :started_at %>
+  <%= form.label :ended_at, 'Ends at' %>
+  <%= form.time_field :ended_at %>
+  <%= form.button class: 'button radius' %>
+<% end %>

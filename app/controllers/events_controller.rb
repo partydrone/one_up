@@ -1,5 +1,5 @@
 class EventsController < ApplicationController
-  before_action :set_event, only: [:show, :edit, :update, :destroy]
+  before_action :set_event, only: [:edit, :update, :destroy]
 
   def index
     @events = policy_scope(Event)
@@ -7,6 +7,8 @@ class EventsController < ApplicationController
   end
 
   def show
+    @event = Event.includes(:activities).find(params[:id])
+    authorize @event
   end
 
   def new

@@ -1,0 +1,19 @@
+<% content_for :title, @activity.title %>
+<h1><%= link_to @activity.event.title, @activity.event %></h1>
+<h2><%= yield :title %></h2>
+<p>
+  <i class="far fa-clock"></i>
+  <%= format_time_range @activity.started_at, @activity.ended_at %>
+</p>
+
+<p>
+  <%= button_to join_activity_path(@activity), class: 'button large' do %>
+    <i class="far fa-check-square fa-fw"></i>
+    Sign me up!
+  <% end unless @activity.participants.include? current_user %>
+</p>
+
+<h3>Participants</h3>
+<ul>
+  <%= render partial: 'participant', collection: @activity.participants %>
+</ul>

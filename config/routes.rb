@@ -7,8 +7,16 @@ Rails.application.routes.draw do
 
   ##
   # Resources
-  resources :events, shallow: true do
-    resources :activities, :invitations
+  concern :joinable do
+    member do
+      post :join
+      delete :leave
+    end
+  end
+
+  resources :events, concerns: :joinable, shallow: true do
+    resources :activities, concerns: :joinable
+    resources :invitations
     resources :registrations, only: [:index, :edit, :update, :destroy]
   end
 

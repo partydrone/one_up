@@ -9,42 +9,13 @@
     <i class="far fa-clock fa-li"></i>
     <%= format_time_range @event.started_at, @event.ended_at %>
   </li>
+  <li>
+    <i class="far fa-map-marker fa-li"></i>
+    <%= @event.location %>
+  </li>
 </ul>
 
-<nav>
-  <ul>
-    <li>
-      <%= link_to @event do %>
-      <i class="far fa-home fa-fw"></i>
-      Dashboard
-      <% end %>
-    </li>
-    <li>
-      <%= link_to event_registrations_path(@event) do %>
-      <i class="far fa-users fa-fw"></i>
-      Members
-      <% end %>
-    </li>
-    <li>
-      <%= link_to edit_registration_path(@event.registrations.find_by(user: current_user)) do %>
-      <i class="far fa-list-alt fa-fw"></i>
-      My registration
-      <% end %>
-    </li>
-    <li>
-      <%= link_to event_invitations_path(@event) do %>
-      <i class="far fa-user-plus fa-fw"></i>
-      Invitations
-      <% end %>
-    </li>
-    <%= content_tag :li do %>
-      <%= link_to edit_event_path(@event) do %>
-      <i class="far fa-edit fa-fw"></i>
-      Edit
-      <% end %>
-    <% end if policy(@event).edit? %>
-  </ul>
-</nav>
+<%= render 'navigation' %>
 
 <div>
   <% SYSTEMS.keys.each do |key| %>
@@ -52,3 +23,12 @@
     <%= @event.registrations.sum "CAST (systems ->> '#{key}' AS INTEGER)" %>
   <% end %>
 </div>
+
+<h2>Activities</h2>
+
+<%= render @event.activities %>
+
+<%= link_to new_event_activity_path(@event), class: 'button radius' do %>
+  Add an activity
+  <i class="far fa-angle-right fa-fw"></i>
+<% end if policy(@event).edit? %>
