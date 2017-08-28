@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   ##
   # Resources
   resources :events, shallow: true do
-    resources :invitations
+    resources :activities, :invitations
     resources :registrations, only: [:index, :edit, :update, :destroy]
   end
 

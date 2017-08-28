@@ -2,28 +2,3 @@
   <i class="far fa-home"></i>
   Welcome to One Up!
 </h1>
-<p>
-  <% if signed_in? %>
-  <%= link_to sign_out_path do %>
-  <i class="far fa-sign-out"></i>
-  Sign out
-  <% end %>
-  <% else %>
-  <%= link_to sign_in_path do %>
-  <i class="far fa-sign-in"></i>
-  Sign in
-  <% end %>
-  <% end %>
-</p>
-<p>
-  <%= link_to events_path do %>
-  <i class="far fa-calendar"></i>
-  View my events
-  <% end %>
-</p>
-<p>
-  <%= link_to new_event_path do %>
-  <i class="far fa-plus"></i>
-  Create a new event
-  <% end %>
-</p>
