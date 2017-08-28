@@ -68,5 +68,10 @@ SYSTEMS = {
     name:    'Xbox One',
     network: true,
     display: false
+  },
+  projector: {
+    name: 'Projector',
+    network: false,
+    display: true
   }
 }.freeze
