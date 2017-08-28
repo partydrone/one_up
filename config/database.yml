@@ -10,4 +10,4 @@ staging:
   url: <%= ENV['DATABASE_URL'].gsub('?', '_staging?') %>
 
 production:
-  url: <%= ENV['DATABASE_URL'].gsub('?', '_production?') %>
+  url: <%= ENV['DATABASE_URL'] %>
