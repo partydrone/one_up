@@ -1,10 +1,22 @@
 <div>
-  <h4><%= activity.title %></h4>
-  <p><%= format_time_range activity.started_at, activity.ended_at %></p>
-  <p>
-    <%= link_to activity, class: 'button radius' do %>
-    More info
-    <i class="far fa-angle-right fa-fw"></i>
-    <% end %>
-  </p>
+</div>
+
+<div class="cell">
+  <div class="card">
+    <div class="card-divider">
+      <h4><%= activity.title %></h4>
+    </div>
+    <div class="card-section">
+      <p>
+        <i class="far fa-clock fa-fw"></i>
+        <%= format_time_range activity.started_at, activity.ended_at %>
+      </p>
+      <p>
+        <%= link_to activity, class: 'button expanded' do %>
+        More info
+        <i class="far fa-angle-right fa-fw"></i>
+        <% end %>
+      </p>
+    </div>
+  </div>
 </div>

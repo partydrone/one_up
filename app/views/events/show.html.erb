@@ -26,7 +26,9 @@
 
 <h2>Activities</h2>
 
-<%= render @event.activities %>
+<div class="grid-x grid-padding-x small-up-1 medium-up-2 large-up-4">
+  <%= render @event.activities %>
+</div>
 
 <%= link_to new_event_activity_path(@event), class: 'button radius' do %>
   Add an activity

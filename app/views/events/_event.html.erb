@@ -1,6 +1,17 @@
-<div>
-  <%= content_tag :div do %>
-    <%= link_to event.title, event %>
-  <% end %>
-  <%= content_tag :div, event.started_at.strftime('%e-%b-%Y, %l:%M %p') %>
+<div class="cell">
+  <div class="card">
+    <div class="card-divider">
+      <h4><%= link_to event.title, event %></h4>
+    </div>
+    <div class="card-section">
+      <div>
+        <i class="far fa-map-marker fa-fw"></i>
+        <%= event.location %>
+      </div>
+      <div>
+        <i class="far fa-calendar fa-fw"></i>
+        <%= event.started_at.strftime('%e-%b-%Y, %l:%M %p') %>
+      </div>
+    </div>
+  </div>
 </div>

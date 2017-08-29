@@ -1,3 +1,6 @@
 <% content_for :title, 'Events' %>
 <h1><%= yield :title %></h1>
-<%= render @events %>
+
+<div class="grid-x grid-padding-x small-up-1 medium-up-2 large-up-4">
+  <%= render @events %>
+</div>
