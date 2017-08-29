@@ -3,12 +3,6 @@
 <p>Sign in using one of the following identity services:</p>
 <ul>
   <li>
-    <%= link_to "/auth/discord#{ '?invite_token=' + @token if @token }", class: 'button discord' do %>
-    <i class="fab fa-discord"></i>
-    Discord
-    <% end %>
-  </li>
-  <li>
     <%= link_to "/auth/facebook#{ '?invite_token=' + @token if @token }", class: 'button facebook' do %>
     <i class="fab fa-facebook"></i>
     Facebook
