@@ -1,7 +1,7 @@
 <div class="cell">
   <div class="card">
     <div class="card-divider">
-      <h4><%= link_to event.title, event %></h4>
+      <h4><%= event.title %></h4>
     </div>
     <div class="card-section">
       <div>
@@ -12,6 +12,19 @@
         <i class="far fa-calendar fa-fw"></i>
         <%= event.started_at.strftime('%e-%b-%Y, %l:%M %p') %>
       </div>
+      <p>
+        <% if event.members.include? current_user %>
+        <%= link_to event, class: 'button expanded' do %>
+          Let me in!
+          <i class="far fa-angle-right fa-fw"></i>
+        <% end %>
+        <% else %>
+        <%= button_to join_event_path(event), class: 'button expanded' do %>
+          Join
+          <i class="far fa-angle-right fa-fw"></i>
+        <% end %>
+        <% end %>
+      </p>
     </div>
   </div>
 </div>

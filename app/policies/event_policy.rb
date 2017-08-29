@@ -11,6 +11,14 @@ class EventPolicy < ApplicationPolicy
     user.has_role? :owner, record
   end
 
+  def join?
+    true
+  end
+
+  def leave?
+    record.members.include?
+  end
+
   class Scope < Scope
     def resolve
       user.events

@@ -1,8 +1,8 @@
 class EventsController < ApplicationController
-  before_action :set_event, only: [:edit, :update, :destroy]
+  before_action :set_event, only: [:edit, :update, :destroy, :join, :leave]
 
   def index
-    @events = policy_scope(Event)
+    @events = Event.all
     authorize Event
   end
 
@@ -43,6 +43,20 @@ class EventsController < ApplicationController
   def destroy
     @event.destroy
     redirect_to events_path, notice: %(Event deleted successfully!)
+  end
+
+  def join
+    @event.members << current_user
+    redirect_to @event, notice: %(You're all signed up!)
+  end
+
+  def leave
+    if current_user.has_role? :owner, @event
+      redirect_to @event, alert: %(You can't leave this event. You're the owner!)
+    else
+      @event.members.destroy(current_user)
+      redirect_to events_path, notice: %(You left the event.)
+    end
   end
 
   private
