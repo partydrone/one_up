@@ -14,12 +14,12 @@
       </div>
       <p>
         <% if event.members.include? current_user %>
-        <%= link_to event, class: 'button expanded' do %>
+        <%= link_to event, class: 'hollow button expanded' do %>
           Let me in!
           <i class="far fa-angle-right fa-fw"></i>
         <% end %>
         <% else %>
-        <%= button_to join_event_path(event), class: 'button expanded' do %>
+        <%= button_to join_event_path(event), class: 'hollow button expanded' do %>
           Join
           <i class="far fa-angle-right fa-fw"></i>
         <% end %>
