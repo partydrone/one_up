@@ -34,6 +34,11 @@ SYSTEMS = {
     network: false,
     display: false
   },
+  game_cube: {
+    name:    'Nintendo Game Cube',
+    network: false,
+    display: false
+  },
   wii: {
     name:    'Nintendo Wii',
     network: true,
@@ -50,7 +55,7 @@ SYSTEMS = {
     display: false
   },
   display: {
-    name:    'Display (TV/monitor)',
+    name:    'TV',
     network: false,
     display: true
   },
