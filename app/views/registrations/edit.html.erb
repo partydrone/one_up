@@ -4,12 +4,35 @@
 <%= form_for @registration do |form| %>
   <%= form.label :extra_life_participant_id %>
   <%= form.text_field :extra_life_participant_id %>
-  <%= form.label :systems %>
-  <% SYSTEMS.keys.each do |system| %>
-    <%= form.label system, SYSTEMS[system][:name] %>
-    <%= form.number_field system, min: 0 %>
+  <h5>
+    Systems
+    <small>
+      <span data-tooltip aria-haspopup="true" class="has-tip" data-disable-hover="false" tabindex="1" title="How many of the following devices you plan to bring for public use.">
+        <i class="far fa-question-circle"></i>
+      </span>
+    </small>
+  </h5>
+  <div class="grid-x grid-margin-x small-up-3 medium-up-6">
+  <% SYSTEMS.keys.sort.each do |system| %>
+    <div class="cell">
+      <%= form.label system, SYSTEMS[system][:name] %>
+      <%= form.number_field system, min: 0 %>
+    </div>
   <% end %>
-  <%= form.submit %>
+  </div>
+  <%= form.button class: 'button' %>
 <% end %>
-<hr>
-<%= button_to 'Leave event', @registration, method: :delete, data: { confirm: 'Are you sure you want to leave this event? All your data associated with this event will be removed and cannot be recovered.' } %>
+
+<div class="alert callout">
+  <h5>Danger Zone</h5>
+  <p>
+    Leaving this event will destroy all of your registration information and
+    activity sign-ups. This information cannot be restored, so you need to be
+    sure. Don't worry, if you click the button on accident, we'll confirm this
+    with you again.
+  </p>
+  <%= button_to @registration, class: 'alert button', method: :delete, data: { confirm: 'Are you sure you want to leave this event? All your data associated with this event will be removed and cannot be recovered.' } do %>
+    <i class="far fa-sign-out fa-fw"></i>
+    Leave <%= @registration.event.title %>
+  <% end %>
+</div>

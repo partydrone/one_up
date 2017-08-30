@@ -39,6 +39,16 @@ SYSTEMS = {
     network: true,
     display: false
   },
+  wii_u: {
+    name:    'Nintendo Wii U',
+    network: true,
+    display: false
+  },
+  switch: {
+    name:    'Nintendo Switch',
+    network: true,
+    display: false
+  },
   display: {
     name:    'Display (TV/monitor)',
     network: false,

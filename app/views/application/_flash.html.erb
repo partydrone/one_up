@@ -1,5 +1,10 @@
 <% flash.each do |name, msg| %>
-  <%= content_tag :div, data: { alert: msg }, class: "alert-box #{name} radius" do %>
-  	<%= msg %>
-  <% end %>
+  <div class="<%= {notice: 'success', alert: 'alert'}[name.to_sym] %> callout small" data-alert="<%= msg %>" data-closable="slide-out-up">
+  	<p><%= msg %></p>
+    <button type="button" class="close-button" aria-label="Dismiss alert" data-close>
+      <span aria-hidden="true">
+        <i class="far fa-times"></i>
+      </span>
+    </button>
+  </div>
 <% end %>

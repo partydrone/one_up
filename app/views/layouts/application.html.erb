@@ -12,8 +12,30 @@
   </head>
 
   <body>
-    <%= render 'site_header' %>
-    <%= yield %>
-    <%= render 'site_footer' %>
+    <div class="grid-y medium-grid-frame">
+      <div class="cell shrink header medium-cell-block-container">
+        <%= render 'site_header' %>
+      </div>
+
+      <div class="cell shrink medium-cell-block-y">
+        <%= render 'flash' %>
+      </div>
+
+      <div class="cell medium-auto medium-cell-block-container">
+        <div class="grid-x grid-padding-x">
+          <!-- <div class="cell medium-4 medium-cell-block-y">
+
+          </div> -->
+
+          <div class="cell medium-12 medium-cell-block-y">
+            <%= yield %>
+          </div>
+        </div>
+      </div>
+
+      <div class="cell shrink footer">
+        <%= render 'site_footer' %>
+      </div>
+    </div>
   </body>
 </html>

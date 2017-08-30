@@ -1,5 +1,5 @@
 <!-- <nav class="site-navigation"> -->
-  <ul class="vertical medium-horizontal menu" data-responsive-menu="accordion medium-dropdown">
+  <ul class="menu" data-responsive-menu="accordion medium-dropdown">
     <li>
       <%= link_to root_path do %>
       <i class="far fa-home fa-fw"></i>
@@ -16,21 +16,30 @@
 
     <% if signed_in? %>
     <li>
-      <%= link_to edit_user_path(current_user) do %>
+      <%= link_to nil do %>
       <i class="far fa-user-circle fa-fw"></i>
       <%= current_user.name %>
       <% end %>
+
+      <ul class="menu">
+        <li>
+          <%= link_to edit_user_path(current_user) do %>
+          <i class="far fa-cog fa-fw"></i>
+          Edit my profile
+          <% end %>
+        </li>
+
+        <li>
+          <%= link_to sign_out_path do %>
+          <i class="far fa-sign-out fa-fw"></i>
+          Sign out
+          <% end %>
+        </li>
+      </ul>
     </li>
 
     <li>
-      <%= link_to sign_out_path do %>
-      <i class="far fa-sign-out fa-fw"></i>
-      Sign out
-      <% end %>
-    </li>
-
-    <li>
-      <%= link_to new_event_path do %>
+      <%= link_to new_event_path, class: 'button' do %>
       <i class="far fa-plus-square fa-fw"></i>
       Create an event
       <% end %>

@@ -1,14 +1,21 @@
-<header class="site-header top-bar">
-  <div class="top-bar-left">
-    <ul class="menu">
-      <li class="menu-text">
-        One Up
-      </li>
-    </ul>
+<header class="site-header">
+  <div class="title-bar" data-responsive-toggle="site-nav" data-hide-for="medium">
+    <button type="button" data-toggle="site-nav">
+      <i class="far fa-bars fa-fw"></i>
+    </button>
+    <div class="title-bar-title">Menu</div>
   </div>
-  <div class="top-bar-right">
-    <%= render 'site_navigation' %>
+
+  <div id="site-nav" class="top-bar">
+    <div class="top-bar-left">
+      <ul class="menu">
+        <li class="menu-text">
+          One Up
+        </li>
+      </ul>
+    </div>
+    <div class="top-bar-right">
+      <%= render 'site_navigation' %>
+    </div>
   </div>
 </header>
-
-<%= render 'flash' %>
