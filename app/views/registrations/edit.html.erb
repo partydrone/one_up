@@ -20,7 +20,7 @@
     </div>
   <% end %>
   </div>
-  <%= form.button class: 'hollow button' %>
+  <%= form.button class: 'button' %>
 <% end %>
 
 <div class="alert callout">
@@ -31,7 +31,7 @@
     sure. Don't worry, if you click the button on accident, we'll confirm this
     with you again.
   </p>
-  <%= button_to @registration, class: 'hollow alert button', method: :delete, data: { confirm: 'Are you sure you want to leave this event? All your data associated with this event will be removed and cannot be recovered.' } do %>
+  <%= button_to @registration, class: 'alert button', method: :delete, data: { confirm: 'Are you sure you want to leave this event? All your data associated with this event will be removed and cannot be recovered.' } do %>
     <i class="far fa-sign-out fa-fw"></i>
     Leave <%= @registration.event.title %>
   <% end %>

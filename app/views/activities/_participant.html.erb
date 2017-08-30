@@ -1,7 +1,7 @@
 <li>
   <%= participant.name %>
-  <%= button_to leave_activity_path(@activity), method: :delete, data: { confirm: 'Are you sure?' }, class: 'button small' do %>
-    <i class="far fa-times fa-fw"></i>
+  <%= button_to leave_activity_path(@activity), method: :delete, data: { confirm: 'Are you sure?' }, class: 'alert button tiny' do %>
+    <i class="far fa-sign-out fa-fw"></i>
     Nevermind
   <% end if participant == current_user %>
 </li>

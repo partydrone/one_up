@@ -1,9 +1,15 @@
 <%= form_for @user do |form| %>
-  <%= form.label :first_name %>
-  <%= form.text_field :first_name %>
-  <%= form.label :last_name %>
-  <%= form.text_field :last_name %>
+  <div class="grid-x grid-margin-x">
+    <div class="cell medium-6">
+      <%= form.label :first_name %>
+      <%= form.text_field :first_name %>
+    </div>
+    <div class="cell medium-6">
+      <%= form.label :last_name %>
+      <%= form.text_field :last_name %>
+    </div>
+  </div>
   <%= form.label :email %>
   <%= form.email_field :email %>
-  <%= form.submit %>
+  <%= form.button class: 'button' %>
 <% end %>

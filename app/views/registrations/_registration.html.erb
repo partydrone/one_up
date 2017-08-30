@@ -3,7 +3,7 @@
   (<%= registration.user.email %>)
   <% if registration.user == current_user %>
   <%= button_to registration, method: :delete, class: 'button small', data: { confirm: %(Leaving this event will destroy all associated data and cannot be recovered. Are you sure?) } do %>
-    <i class="far fa-times"></i>
+    <i class="far fa-sign-out"></i>
     Leave event
   <% end %>
   <% end %>

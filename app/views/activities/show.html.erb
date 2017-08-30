@@ -7,7 +7,7 @@
 </p>
 
 <p>
-  <%= button_to join_activity_path(@activity), class: 'button large' do %>
+  <%= button_to join_activity_path(@activity), class: 'button' do %>
     <i class="far fa-check-square fa-fw"></i>
     Sign me up!
   <% end unless @activity.participants.include? current_user %>
